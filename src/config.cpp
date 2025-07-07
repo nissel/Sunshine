@@ -504,6 +504,7 @@ namespace config {
       {}  // wa
     },  // display_device
 
+    1,  // min_fps_factor
     0  // max_bitrate
   };
 
@@ -1142,6 +1143,7 @@ namespace config {
       video.dd.wa.hdr_toggle_delay = std::chrono::milliseconds {value};
     }
 
+    int_between_f(vars, "min_fps_factor", video.min_fps_factor, {1, 3});
     int_f(vars, "max_bitrate", video.max_bitrate);
 
     path_f(vars, "pkey", nvhttp.pkey);
